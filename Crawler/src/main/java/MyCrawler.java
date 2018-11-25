@@ -74,7 +74,7 @@ public class MyCrawler extends WebCrawler {
             Elements ans_time1 = doc.select("ul.new-answer-list").select("p.time");
             Elements types = doc.getElementsByClass("breadcast-fl");
             try {
-                String filename0 = "/Users/elliot/Documents/Java/作业/hw4/data/";
+                String filename0 = "  ";    //爬取数据存储目录
                 if(types.size() <= 1) {
                     return;
                 }

@@ -18,7 +18,7 @@ import java.util.Scanner;
 public class SearchEngine {
     public static void main(String[] args) {
         SearchEngine se = new SearchEngine();
-        String filePath="/Users/elliot/Documents/Java/作业/hw4/index";//创建索引的存储目录
+        String filePath="  ";//创建索引的存储目录
         System.out.println("新浪爱问-理工学科 搜索引擎 v0.0.1");
 
         System.out.println("搜索问题，输入\":q\"（英文字符）退出");

@@ -17,7 +17,7 @@ import java.io.IOException;
 public class Index {
     public static void main(String[] args) {
         Index Indexer = new Index();
-        String filePath="/Users/elliot/Documents/Java/作业/hw4/index";//创建索引的存储目录
+        String filePath="   ";//创建索引的存储目录
         Indexer.createIndex(filePath);//创建索引
     }
 
@@ -29,21 +29,21 @@ public class Index {
             Analyzer analyzer = new IKAnalyzer();
 
             IndexWriterConfig conf=new IndexWriterConfig(Version.LUCENE_4_10_0, analyzer);
-            iwr=new IndexWriter(dir,conf);//建立IndexWriter。固定套路
-            File file = new File("/Users/elliot/Documents/Java/作业/hw4/data/教育科学");
-            File file1 = new File("/Users/elliot/Documents/Java/作业/hw4/data/教育科学/理工学科");
+            iwr=new IndexWriter(dir,conf);
+            File file = new File("  ");
+            File file1 = new File("  ");
             File[] fs = file.listFiles();     //遍历path下的文件和目录，放在File数组中
             File[] fs1 = file1.listFiles();
-            for(File dataFile:fs){                //遍历File[]数组
-                String fileName = dataFile.getName();  //获取文件和目录名
-                if (!dataFile.isDirectory() && fileName.endsWith("txt")) {  //另外可用fileName.endsWith("txt")来过滤出以txt结尾的文件
+            for(File dataFile:fs){              
+                String fileName = dataFile.getName(); 
+                if (!dataFile.isDirectory() && fileName.endsWith("txt")) {  
                     String field = fileName.replaceAll(".txt","");
                     getDocuments(field, dataFile, iwr);
                 }
             }
-            for(File dataFile:fs1){                //遍历File[]数组
-                String fileName = dataFile.getName();  //获取文件和目录名
-                if (!dataFile.isDirectory() && fileName.endsWith("txt")) {  //另外可用fileName.endsWith("txt")来过滤出以txt结尾的文件
+            for(File dataFile:fs1){               
+                String fileName = dataFile.getName();  
+                if (!dataFile.isDirectory() && fileName.endsWith("txt")) {  
                     String field = fileName.replaceAll(".txt","");
                     getDocuments(field, dataFile, iwr);
                 }
@@ -62,7 +62,6 @@ public class Index {
     }
 
     public void getDocuments(String field, File data, IndexWriter iwr){
-        //doc中内容由field构成，在检索过程中，Lucene会按照指定的Field依次搜索每个document的该项field是否符合要求。
 
         BufferedReader reader = null;
 
